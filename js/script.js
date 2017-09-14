@@ -1,7 +1,6 @@
 $(document).ready(function(){
   var clientID = '8ca9d1ec9de52e3bc317',
-  clientSecret = '65dcbf1b58cdf4d1f7f05cc27511f59cfa90e7b8',
-  counter = 0;
+  clientSecret = '65dcbf1b58cdf4d1f7f05cc27511f59cfa90e7b8';
 
   function test(testing) { //just checks if a value is null so it can throw something besides undefined, which looks out of place
     if (testing) {
@@ -58,33 +57,49 @@ $(document).ready(function(){
         // use $.each to iterate over all of the repos
         $.each(repos, function(index, repo){
           // now we can inject our repo and user data for every instance of repos...
-          $('#repos').append(`
-            <div class="well">
-              <div class="row flex-center">
-                <div class="col-md-6">
-                  <strong>${user.login}</strong>: ${test(repo.description)}
-                </div>
-                <div class="col-md-3">
-                  <span class="label label-default"> Forks: ${test(repo.forks_count)}</span>
-                  <span class="label label-primary">Watchers: ${test(repo.watchers_count)}</span>
-                  <span class="label label-success">Stars: ${test(repo.stargazers_count)}</span>
-                </div>
-                <div class="col-md-3 hCenter" id="buttons${counter}">
-                  <button class="btn btn-default minWidth"><a href="${repo.html_url}" target="_blank">${repo.name}</a></buttons>
-                </div>
-              </div>
-            </div>
-          `);
+
           urlExists(`https://${user.login}.github.io/${repo.name}`, function(status) {
             if (status !== 404) {
-              $('#buttons'+counter).append(`
-                <button class="btn btn-default minWidth"><a href="`+`${user.login}.github.io/${repo.name}`+`" target="_blank">The ghpages</a></button>
+              $('#repos').append(`
+                <div class="well">
+                  <div class="row flex-center">
+                    <div class="col-md-6">
+                      <strong>${user.login}</strong>: ${test(repo.description)}
+                    </div>
+                    <div class="col-md-3">
+                      <span class="label label-default"> Forks: ${test(repo.forks_count)}</span>
+                      <span class="label label-primary">Watchers: ${test(repo.watchers_count)}</span>
+                      <span class="label label-success">Stars: ${test(repo.stargazers_count)}</span>
+                    </div>
+                    <div class="col-md-3 hCenter" id="buttons">
+                      <a class="btn btn-default minWidth" href="${repo.html_url}" target="_blank">${repo.name}</a>
+                      <a class="btn btn-default minWidth" href="`+`https://${user.login}.github.io/${repo.name}`+`" target="_blank">The ghpages</a>
+                    </div>
+                  </div>
+                </div>
+              `);
+            } else {
+              $('#repos').append(`
+                <div class="well">
+                  <div class="row flex-center">
+                    <div class="col-md-6">
+                      <strong>${user.login}</strong>: ${test(repo.description)}
+                    </div>
+                    <div class="col-md-3">
+                      <span class="label label-default"> Forks: ${test(repo.forks_count)}</span>
+                      <span class="label label-primary">Watchers: ${test(repo.watchers_count)}</span>
+                      <span class="label label-success">Stars: ${test(repo.stargazers_count)}</span>
+                    </div>
+                    <div class="col-md-3 hCenter" id="buttons">
+                      <a class="btn btn-default minWidth" href="${repo.html_url}" target="_blank">${repo.name}</a>
+                    </div>
+                  </div>
+                </div>
               `);
             }
           });
         });
       });
-      counter++;
       // target the profile section, and use .html to inject HTML code inside of the #profile section
       $('#profile').html(`
         <div class="panel panel-default">

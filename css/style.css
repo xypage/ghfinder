@@ -23,9 +23,13 @@
 .minWidth {
   min-width: 100px;
 }
-a {
+a, a:visited {
   color:#DDD;
 }
 a:hover {
   color:#EEE;
+}
+#buttons {
+  display:flex;
+  flex-direction: column;
 }
