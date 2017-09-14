@@ -1,0 +1,31 @@
+#searchUser {
+  width: 70%;
+  margin-right:5%;
+}
+#repos>.well>.row {
+  display:flex;
+  align-items: center;
+}
+.flex-center {
+  display:flex!important;
+  align-items: center;
+}
+.altLink {
+  color:blue;
+}
+.altLink:hover {
+  color:#6078c4;
+}
+.hCenter {
+  display:flex;
+  justify-content: center;
+}
+.minWidth {
+  min-width: 100px;
+}
+a {
+  color:#DDD;
+}
+a:hover {
+  color:#EEE;
+}
