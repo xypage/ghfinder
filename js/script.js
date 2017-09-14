@@ -64,7 +64,7 @@ $(document).ready(function(){
                 <div class="well">
                   <div class="row flex-center">
                     <div class="col-md-6">
-                      <strong>${user.login}</strong>: ${test(repo.description)}
+                      <strong>${repo.name}</strong>: ${test(repo.description)}
                     </div>
                     <div class="col-md-3">
                       <span class="label label-default"> Forks: ${test(repo.forks_count)}</span>
@@ -72,7 +72,7 @@ $(document).ready(function(){
                       <span class="label label-success">Stars: ${test(repo.stargazers_count)}</span>
                     </div>
                     <div class="col-md-3 hCenter" id="buttons">
-                      <a class="btn btn-default minWidth" href="${repo.html_url}" target="_blank">${repo.name}</a>
+                      <a class="btn btn-default minWidth" href="${repo.html_url}" target="_blank">Repo Link</a>
                       <a class="btn btn-default minWidth" href="`+`https://${user.login}.github.io/${repo.name}`+`" target="_blank">The ghpages</a>
                     </div>
                   </div>
@@ -83,7 +83,7 @@ $(document).ready(function(){
                 <div class="well">
                   <div class="row flex-center">
                     <div class="col-md-6">
-                      <strong>${user.login}</strong>: ${test(repo.description)}
+                      <strong>${repo.name}</strong>: ${test(repo.description)}
                     </div>
                     <div class="col-md-3">
                       <span class="label label-default"> Forks: ${test(repo.forks_count)}</span>
@@ -91,7 +91,7 @@ $(document).ready(function(){
                       <span class="label label-success">Stars: ${test(repo.stargazers_count)}</span>
                     </div>
                     <div class="col-md-3 hCenter" id="buttons">
-                      <a class="btn btn-default minWidth" href="${repo.html_url}" target="_blank">${repo.name}</a>
+                      <a class="btn btn-default minWidth" href="${repo.html_url}" target="_blank">Repo Link</a>
                     </div>
                   </div>
                 </div>
