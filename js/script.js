@@ -52,7 +52,7 @@ $(document).ready(function(){
           per_page: 5
         }
       })
-      // this is why we need two AJAX calls, to return the second repo...
+      // this is why we need two AJAX calls, to return the second repo
       .done(function(repos){
         // use $.each to iterate over all of the repos
         $.each(repos, function(index, repo){
